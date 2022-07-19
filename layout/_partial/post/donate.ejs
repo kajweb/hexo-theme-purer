@@ -10,14 +10,14 @@
             <p><%= __('donate.title') %></p>
           </div>
           <div class="tab-content">
-            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+            <div role="tabpanel" class="tab-pane fade" id="alipay">
               <div class="donate-payimg">
                 <img src="<%- url_for(theme.donate.alipay.qrcode) %>" alt="<%= __('donate.qrcode_alt') %>" title="<%= __('donate.qrcode_title') %>" />
               </div>
               <p class="text-muted mv"><%= __('donate.tip') %></p>
               <p class="text-grey"><%= __('donate.alipay_action_tip') %></p>
             </div>
-            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+            <div role="tabpanel" class="tab-pane fade active in" id="wechatpay">
               <div class="donate-payimg">
                 <img src="<%- url_for(theme.donate.wechatpay.qrcode) %>" alt="<%= __('donate.qrcode_alt') %>" title="<%= __('donate.qrcode_title') %>" />
               </div>
@@ -28,10 +28,10 @@
           <div class="donate-footer">
             <ul class="nav nav-tabs nav-justified" role="tablist">
               <li role="presentation" class="active">
-                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> <%= __('donate.alipay') %></a>
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> <%= __('donate.wechatpay') %></a>
               </li>
               <li role="presentation" class="">
-                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> <%= __('donate.wechatpay') %></a>
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> <%= __('donate.alipay') %></a>
               </li>
             </ul>
           </div>

@@ -2,6 +2,7 @@
 <script>
 window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 </script>
+<script src="<%- url_for("/js/commom.js")%>"></script>
 <%- js('js/plugin.min') %>
 <%- js('js/application') %>
 <%- partial('_script/search') %>
@@ -17,5 +18,7 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 <% if (!is_home() && !is_category() && !is_tag() && !is_archive() && post.comments) { %>
    <%- partial('_script/comment') %>
 <% } %>
+<%- partial('_script/go-top') %>
 <%- partial('_script/fancybox') %>
 <%- partial('_script/analytics') %>
+<%- partial('_script/loger') %>

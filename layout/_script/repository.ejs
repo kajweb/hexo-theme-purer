@@ -4,6 +4,7 @@ var open = function() {
   var handleTpl = function() {
     baiduTpl.list = baidu.template("list-template");
     baiduTpl.error = baidu.template("error-template");
+    baiduTpl.repoCache = baidu.template("repo-cache");
   };
 
   var handleGithub = function() {
@@ -11,10 +12,14 @@ var open = function() {
     var errorContainer = repoContainer.find(".blankslate");
     var countContainer = $("#repo-count");
 
-    $.get("https://api.github.com/users/<%=theme.github.username%>/repos", function(result) {
+    var success = (result)=>{
       if (result) {
+        result = result.filter(e=>{
+          if( !e.fork )return e;
+        })
         errorContainer.remove();
-        countContainer.text(result.length); //设置项目个数
+        let counter = parseInt(countContainer.text())
+        countContainer.text( counter + result.length ); //设置项目个数
         var ul = $("<ul class='repo-list row clearfix'></ul>");
         result.sort(function(a, b) {
           return new Date(b.updated_at) - new Date(a.updated_at)
@@ -30,7 +35,6 @@ var open = function() {
           var html = baiduTpl.list(repo);
           ul.append(html);
         })
-
         repoContainer.append(ul);
         $(".geopattern").each(function() {
           $(this).geopattern($(this).data('pattern-id'));
@@ -38,8 +42,37 @@ var open = function() {
       } else {
         errorContainer.append(baiduTpl.error());
       }
-    });
+    }
+
+    let repositories = [
+      [ getGithubLink("<%=theme.github.username%>"), getLocalLink("repos") ],
+      [ getGithubLink("<%=theme.github.organization%>"), getLocalLink("repos-organization") ],
+    ];
+
+    $.ajaxSettings.async = false;
+    repositories.map( e=>{
+        handleGetData( e[0], e[1], success );
+    })
+    $.ajaxSettings.async = true;
   };
+
+    var handleGetData = function( githubUrl, localOrgUrl, success ){
+    $.get( githubUrl, success ).error(e=>{
+        console.log("Request to api.github.com failed, Cache was returned.")
+        var repoContainer = $('.repo-content');
+        repoContainer.append(baiduTpl.repoCache());
+        $.get(localOrgUrl, success)
+    });
+  }
+
+    var getGithubLink = function( username ){
+        return "https://api.github.com/users/"+ username +"/repos?per_page=65535";
+    };
+
+    var getLocalLink = function( filename ){
+        let _root = "<%= config.root %>json/";
+        return _root + filename + ".json";
+    };
 
   return {
     init: function() {

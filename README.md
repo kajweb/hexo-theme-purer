@@ -1,8 +1,14 @@
-# pure
+# purer
+
+
+
+> It's a pure theme for Hexo based on Hexo theme pure.
+
+
 
 A brand new default theme for [[Hexo](https://hexo.io)].  [Preview](http://cofess.github.io/) | [中文说明文档](README.cn.md) | [iconfont](http://blog.cofess.com/hexo-theme-pure/iconfont/demo_fontclass.html)
 
-![](screenshot/pure.png)
+![](screenshot/purer.png)
 
 ## Features
 
@@ -31,16 +37,16 @@ A brand new default theme for [[Hexo](https://hexo.io)].  [Preview](http://cofes
 Execute the following command under your `hexo` folder.
 
 ```
-git clone https://github.com/cofess/hexo-theme-pure.git themes/pure
+git clone https://github.com/kajweb/hexo-theme-purer.git themes/purer
 ```
-Then modify the property `theme` of the file `hexo/_config.yml`  to `theme: pure`
+Then modify the property `theme` of the file `hexo/_config.yml`  to `theme: purer`
 
 ## Update theme
 
 Execute the following command to update theme.
 
 ```
-cd themes/pure
+cd themes/purer
 git pull
 ```
 ## Install plugin

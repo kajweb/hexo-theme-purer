@@ -1,0 +1,6 @@
+<% if(theme.loger.leancloud.enable ){  %>
+<script src="https://cdn1.lncld.net/static/js/av-min-1.2.1.js"></script>
+<script src="<%- url_for("/js/fp.min.js")%>"></script>
+<script defer>if( !AV.applicationId || AV.applicationKey ){AV.init({appId: '<%= theme.pv.leancloud.app_id %>',appKey: '<%= theme.pv.leancloud.app_key %>'});}
+$(function() {getTrack();});</script>
+<% } %>

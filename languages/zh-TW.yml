@@ -8,6 +8,7 @@ menu:
   Movies: 電影
   Links: 友鏈
   About: 關於
+  Algorithms: 算法
 nav:
   all: All
   older: 下一篇
@@ -92,3 +93,7 @@ copyright:
   theme_by: Theme by
   base_on: base on
   powered_by: Powered by
+codeblock:
+  copy_button: 複製
+  copy_success: 複製成功
+  copy_failure: 複製失敗

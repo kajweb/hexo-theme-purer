@@ -4,7 +4,7 @@
 
 <% if(theme.pv.leancloud.enable && !theme.comment.valine.visitor ){  %>
 <!-- custom analytics part create by xiamo -->
-<script defer src="https://cdn1.lncld.net/static/js/av-min-1.2.1.js"></script>
+<script src="https://cdn1.lncld.net/static/js/av-min-1.2.1.js"></script>
 <script defer>
 AV.init({
   appId: '<%= theme.pv.leancloud.app_id %>',
@@ -13,31 +13,31 @@ AV.init({
 
 function showTime(Counter) {
 	var query = new AV.Query(Counter);
-		var visitors= $('.leancloud_visitors');
-		query.greaterThanOrEqualTo("time", 0);		
-		query.find({
-			success: function(results) {
-				if (results.length == 0) {				
-					return;
-				}
-				var data = results;
-				visitors.each(function(){
-					var url = $(this).attr('id').trim();					
-					for (var i = 0; i < data.length; i++) {
-						var object = data[i];
-						var content = object.get('time');
-						var _url = object.get('url')
-						if(url == _url){
-							$(this).text(content);
-						}
-					}
-				})
-				
-			},
-			error: function(object, error) {
-				console.log("Error: " + error.code + " " + error.message);
+	var visitors= $('.leancloud_visitors');
+	query.greaterThanOrEqualTo("time", 0);		
+	query.find({
+		success: function(results) {
+			if (results.length == 0) {				
+				return;
 			}
-		});
+			var data = results;
+			visitors.each(function(){
+				var url = $(this).attr('id').trim();					
+				for (var i = 0; i < data.length; i++) {
+					var object = data[i];
+					var content = object.get('time');
+					var _url = object.get('url')
+					if(url == _url){
+						$(this).text(content);
+					}
+				}
+			})
+			
+		},
+		error: function(object, error) {
+			console.log("Error: " + error.code + " " + error.message);
+		}
+	});
 }
 
 function addCount(Counter) {

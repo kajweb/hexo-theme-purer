@@ -8,6 +8,7 @@ menu:
   Movies: Movies
   Links: Links
   About: About
+  Algorithms: Algorithms
 nav:
   all: All
   older: Older
@@ -92,3 +93,7 @@ copyright:
   theme_by: Theme by
   base_on: base on
   powered_by: Powered by
+codeblock:
+  copy_button: copy
+  copy_success: copy success
+  copy_failure: copy failed

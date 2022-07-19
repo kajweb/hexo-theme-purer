@@ -6,7 +6,7 @@
   <div class="article-body">
     <div class="repo-content">
       <div class="blankslate">
-        <p>正在加载...</p>
+        <p>正在加载 or <a href="https://github.com/<%= theme.github.username %>">Click Here</a>...</p>
       </div>
     </div>
   </div>
@@ -32,7 +32,13 @@
     </div>
   </li>
 </script>
+
 <!--获取失败模版-->
 <script type="text/template" id="error-template">
   <h3>加载失败</h3><p>请刷新或稍后再试...</p>
+</script>
+
+<!--数据缓存模版-->
+<script type="text/template" id="repo-cache">
+  <div style="border-left: 5px solid red; padding: 5px; margin-bottom: 10px; color: #ccc;">由于网络问题无法获得最新数据，当前数据是缓存数据。</div>
 </script>

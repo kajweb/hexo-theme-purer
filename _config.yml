@@ -5,9 +5,10 @@ menu:
   Categories: categories  # 分类
   Tags: tags  # 标签
   Repository: repository  # github repositories
-  Books: books  # 豆瓣书单
+  # Books: books  # 豆瓣书单
   Links: links  # 友链
   About: about  # 关于
+  Algorithms: https://algorithm.iwwee.com
 
 # Enable/Disable menu icons
 menu_icons:
@@ -20,6 +21,7 @@ menu_icons:
   books: icon-book-fill
   links: icon-friendship
   about: icon-cup-fill
+  algorithms: icon-folder
 
 # rss
 rss: /atom.xml
@@ -30,11 +32,12 @@ site:
     enabled: true
     width: 40
     height: 40
-    url: ../images/logo.png
-  title: Hexo # 页面title
+    url: ../images/2993320.jpg
+  title: kajweb的博客 # 页面title
   favicon: /favicon.png
-  board: <p>欢迎交流与分享经验!</p> # 站点公告
+  board: <p><a href="https://blog.csdn.net/kajweb">原博客</a>　/　<a href="https://github.com/kajweb">github</a></p> # 站点公告
   copyright: false # 底部版权信息
+  publishby: false
 
 # config
 config:
@@ -86,29 +89,31 @@ donate:
   enable: true
   # 微信打赏
   wechatpay:
-    qrcode: images/donate/wechatpayimg.png
+    qrcode: images/donate/wc.png
     title: 微信支付
   # 支付宝打赏
   alipay: 
-    qrcode: images/donate/alipayimg.png 
+    qrcode: images/donate/al.png 
     title: 支付宝
 
 # Share
 # weibo,qq,qzone,wechat,tencent,douban,diandian,facebook,twitter,google,linkedin
 share:
   enable: true  # 是否启用分享
-  sites: weibo,qq,wechat,facebook,twitter  # PC端显示的分享图标
-  mobile_sites: weibo,qq,qzone  # 移动端显示的分享图标
+  # sites: weibo,qq,wechat,facebook,twitter  # PC端显示的分享图标
+  sites: qq,qzone,wechat,weibo,douban,facebook,twitter,google,linkedin  # PC端显示的分享图标
+  mobile_sites: wechat,qq,qzone,weibo  # 移动端显示的分享图标
 
 # Github
 github: 
-  username: cofess  # github username
+  username: kajweb  # github username
+  organization: WXA-IDE
 
 # Comment
 # Gitment
 # Introduction: https://imsun.net/posts/gitment-introduction/
 comment:
-  type: valine  # 启用哪种评论系统
+  type:   # 启用哪种评论系统
   disqus:  # enter disqus shortname here
   youyan: 
     uid: 1783844 # enter youyan uid 
@@ -158,13 +163,19 @@ pv:
   busuanzi:
     enable: false  # 不蒜子统计
   leancloud:
+    enable: true  # leancloud统计
+    app_id: # leancloud <AppID>
+    app_key: # leancloud <AppKey>
+
+loger:
+  leancloud:
     enable: false  # leancloud统计
     app_id: # leancloud <AppID>
     app_key: # leancloud <AppKey>
         
 # wordcount
 postCount:
-  enable: false
+  enable: true
   wordcount: true  # 文章字数统计
   min2read: true  # 阅读时长预计 
 
@@ -184,40 +195,38 @@ fb_app_id:
 # profile
 profile:
   enabled: true # Whether to show profile bar
-  avatar: images/avatar.jpg
+  avatar: images/2993320.jpg
   gravatar: # Gravatar email address, if you enable Gravatar, your avatar config will be overriden
-  author: 昵称
-  author_title: Web Developer & Designer
-  author_description: 个人简介。
-  location: Shenzhen, China
-  follow: https://github.com/cofess
+  author: kajweb
+  author_title: Full Stack Programmer
+  author_description: welcome to https://iwwee.com
+  location: Guangdong, China
+  follow: https://github.com/kajweb
   # Social Links
   social:
     links:
-      github: https://github.com/cofess
-      weibo: http://weibo.com/cofess
-      twitter: https://twitter.com/iwebued
+      github: https://github.com/kajweb
+      weibo: https://weibo.com/ismylyy
+      # twitter: https://twitter.com/iwebued
       # facebook: /
       # dribbble: /
-      behance: https://www.behance.net/cofess
+      # behance: https://www.behance.net/cofess
       rss: atom.xml
     link_tooltip: true # enable the social link tooltip, options: true, false
   # My Skills 
   skills:
-    Git: ★★★☆☆
-    Gulp: ★★★☆☆
-    Javascript: ★★★☆☆
-    HTML+CSS: ★★★☆☆
-    Bootstrap: ★★★☆☆
-    ThinkPHP: ★★★☆☆
+    Git: ★★★★☆
+    Gulp: ★★☆☆☆
+    Javascript: ★★★★★
+    HTML+CSS: ★★★★★
+    Bootstrap: ★★☆☆☆
+    ThinkPHP: ★★★★☆
     平面设计: ★★★☆☆
   # My Personal Links
   links:
-    Github: https://github.com/cofess
-    Blog: http://blog.cofess.com
-    微博: http://weibo.com/cofess
-    花瓣: http://huaban.com/cofess
-    Behance: https://www.behance.net/cofess
+    Github: https://github.com/kajweb
+    Blog: https://iwwee.com
+    微博: https://weibo.com/ismylyy
   # My Personal Labels
   labels:
     - 前端
@@ -227,10 +236,22 @@ profile:
     - 网页重构
   # My Personal Works
   works:
-    name:
-      link: http://www.example.com
-      date: 2016
+    Qingting Technology Co., Ltd.:
+      link: https://qinng.cn/
+      date: 2017-2019
   # My Personal Projects
   projects:
-    cofess/gulp-startpro: https://github.com/cofess/gulp-startpro
-    cofess/hexo-theme-pure: https://github.com/cofess/hexo-theme-pure
+    kajweb/wqxuetang_downloader: https://github.com/kajweb/wqxuetang_downloader
+    kajweb/douyin_downloader: https://github.com/kajweb/douyin_downloader
+    kajweb/image-cycle-resizer: https://github.com/kajweb/image-cycle-resizer
+
+#备案号
+beian: 粤ICP备18116211号
+
+codeblock: 
+  copy_button: 
+    enable: true
+    result: true
+  copyright:
+    enable: true
+    content: \n/**\n* 感谢您复制代码，使用代码请注明引用出处\n* kajweb @ https://blog.iwwee.com\n*/
